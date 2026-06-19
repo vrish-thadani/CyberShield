@@ -1,49 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CyberShield Global</title>
+
+<title>CyberShield Global SOC</title>
+
 <link rel="stylesheet" href="style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
 
+<div class="background-grid"></div>
+
 <div class="container">
 
 <header>
-    <h1>CyberShield Global</h1>
-    <p>International Cyber Threat Intelligence Platform</p>
+
+<div>
+<h1>CyberShield Global</h1>
+<p>Global Cyber Threat Intelligence Platform</p>
+</div>
+
+<div class="clock-panel">
+<div>System Status</div>
+<h2 id="clock">Loading...</h2>
+</div>
+
 </header>
 
-<section class="cards">
+<section class="stats">
 
-    <div class="card">
-        <h2 id="totalThreats">125</h2>
-        <span>Total Threats</span>
-    </div>
+<div class="card">
+<h2 id="totalThreats">0</h2>
+<p>Total Threats</p>
+</div>
 
-    <div class="card critical">
-        <h2>12</h2>
-        <span>Critical Alerts</span>
-    </div>
+<div class="card critical">
+<h2 id="criticalCount">0</h2>
+<p>Critical Alerts</p>
+</div>
 
-    <div class="card warning">
-        <h2>8</h2>
-        <span>Active Incidents</span>
-    </div>
+<div class="card warning">
+<h2 id="incidentCount">0</h2>
+<p>Active Incidents</p>
+</div>
 
-    <div class="card success">
-        <h2>45</h2>
-        <span>Protected Systems</span>
-    </div>
+<div class="card success">
+<h2 id="protectedCount">45</h2>
+<p>Protected Systems</p>
+</div>
+
+</section>
+
+<section class="chart-grid">
+
+<div class="panel">
+<h2>Threat Activity Trend</h2>
+<canvas id="activityChart"></canvas>
+</div>
+
+<div class="panel">
+<h2>Threat Severity Distribution</h2>
+<canvas id="severityChart"></canvas>
+</div>
 
 </section>
 
 <section class="panel">
 
-<h2>Threat Intelligence Submission</h2>
+<h2>Submit Threat Intelligence</h2>
 
 <form id="threatForm">
 
@@ -86,6 +114,40 @@ Report Threat
 
 <section class="panel">
 
+<h2>Global Threat Heat Map</h2>
+
+<div class="country-grid">
+
+<div class="country critical-box">
+USA - CRITICAL
+</div>
+
+<div class="country high-box">
+India - HIGH
+</div>
+
+<div class="country medium-box">
+Germany - MEDIUM
+</div>
+
+<div class="country low-box">
+Japan - LOW
+</div>
+
+<div class="country high-box">
+UK - HIGH
+</div>
+
+<div class="country medium-box">
+Brazil - MEDIUM
+</div>
+
+</div>
+
+</section>
+
+<section class="panel">
+
 <h2>Live Threat Feed</h2>
 
 <table>
@@ -93,13 +155,16 @@ Report Threat
 <thead>
 <tr>
 <th>ID</th>
-<th>Threat Name</th>
+<th>Threat</th>
 <th>Severity</th>
 <th>Region</th>
+<th>Time</th>
 </tr>
 </thead>
 
-<tbody id="tableBody"></tbody>
+<tbody id="tableBody">
+
+</tbody>
 
 </table>
 
