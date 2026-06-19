@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cybershield
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: cybershield
+  template:
+    metadata:
+      labels:
+        app: cybershield
+    spec:
+      containers:
+      - name: cybershield
+        image: cybershield:latest
+        ports:
+        - containerPort: 3000
