@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CyberShield Global</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+    <h1>CyberShield Global</h1>
+    <p>International Cyber Threat Intelligence Platform</p>
+</header>
+
+<section class="cards">
+
+    <div class="card">
+        <h2 id="totalThreats">125</h2>
+        <span>Total Threats</span>
+    </div>
+
+    <div class="card critical">
+        <h2>12</h2>
+        <span>Critical Alerts</span>
+    </div>
+
+    <div class="card warning">
+        <h2>8</h2>
+        <span>Active Incidents</span>
+    </div>
+
+    <div class="card success">
+        <h2>45</h2>
+        <span>Protected Systems</span>
+    </div>
+
+</section>
+
+<section class="panel">
+
+<h2>Threat Intelligence Submission</h2>
+
+<form id="threatForm">
+
+<input
+type="text"
+id="name"
+placeholder="Threat Name"
+required
+>
+
+<select id="severity">
+
+<option>Low</option>
+<option>Medium</option>
+<option>High</option>
+<option>Critical</option>
+
+</select>
+
+<input
+type="text"
+id="region"
+placeholder="Region"
+required
+>
+
+<textarea
+id="description"
+placeholder="Threat Description"
+required
+></textarea>
+
+<button type="submit">
+Report Threat
+</button>
+
+</form>
+
+</section>
+
+<section class="panel">
+
+<h2>Live Threat Feed</h2>
+
+<table>
+
+<thead>
+<tr>
+<th>ID</th>
+<th>Threat Name</th>
+<th>Severity</th>
+<th>Region</th>
+</tr>
+</thead>
+
+<tbody id="tableBody"></tbody>
+
+</table>
+
+</section>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
